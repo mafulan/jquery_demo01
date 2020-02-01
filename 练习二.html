@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+    #wrap{
+        width: 4450px;
+        border: 1px black solid;
+    
+    }
+    #ctrl{
+        overflow: hidden;
+    }
+    button{
+        width: 150px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        float: left;
+        background-color: gray;
+    }
+    button.active{
+        background-color: white;
+        color: red;
+    }
+    #content{
+        height: 200px;
+        padding: 20px;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="ctrl">
+            <button class="active">aaa</button>
+            <button>bbb</button>
+            <button>ccc</button>
+        </div>
+        <div id="content" >我是aaa的内容</div>
+    </div>
+
+     <script src="jquery-1.10.1.min.js"></script>
+     <script>
+         var arr = ["我是aaa的内容","我是bbb的内容","我是ccc的内容"];
+
+         $("button").click(function(){
+             
+             $("button").removeClass("active");
+             $(this).addClass("active");
+
+             $("#content").html(arr[$(this).index()]);
+         })
+        
+   
+     </script>
+
+</body>
+</html>

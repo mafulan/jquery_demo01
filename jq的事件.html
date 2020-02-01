@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 150px;
+        height: 150px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    $("#div1").hover(function (){
+        $(this).css("backgroundColor","yellow");
+        // $("#div2").hide(500);
+        // $("#div2").slideUp(600);
+        // $("#div2").fadeOut(800);
+        $("#div2").fadeTo(800,0.2);
+    },function (){
+        $(this).css("backgroundColor","red");
+        // $("#div2").show(800);
+        // $("#div2").slideDown(800);
+        // $("#div2").fadeIn(800);
+        $("#div2").fadeTo(800,1);
+    })
+    </script>
+</body>
+</html>

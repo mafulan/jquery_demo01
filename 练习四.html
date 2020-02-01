@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件绑定函数</title>
+    <style>
+    div{
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        font-size: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div>5</div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+         var m = $("div").text();
+        $("div").on("click",function(){
+            if(m>0){
+                $("div").html(--m);
+            }else{
+                alert("点击事件已失效");
+                $("div").off("click");
+            }
+        })
+    </script>
+</body>
+</html>

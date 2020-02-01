@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动条动画</title>
+    <style>
+    body{
+        height: 5000px;
+    }
+    </style>
+</head>
+<body>
+    <!-- 自己写的 -->
+    <input type="text">
+    <button>滚动条动画</button>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+        var timer =null;
+        var bOn = true;
+        $("button").click(function(){
+            timer = setInterval(() => {
+                bOn = false;
+                var nowTop =  $(document).scrollTop();
+                var disTop = $("input").val()-nowTop;
+                if(disTop<=5){
+                    $(document).scrollTop($("input").val());
+                    clearInterval(timer);
+                }
+                $(document).scrollTop(nowTop+disTop/6);
+            }, 100);
+        })        
+        $("window").on("scroll",function(){
+            if(bOn){
+                clearInterval(timer);
+            }
+            bOn = true;
+        })
+    </script>
+</body>
+</html>

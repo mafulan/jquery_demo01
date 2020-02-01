@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        height: 5000px;
+    }
+    </style>
+</head>
+<body>
+    <input type="text"/>
+    <button>移动滚动条</button>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    var timer = null;
+    var bOn = true;
+    $("button").on("click",function (){
+        timer = setInterval(function (){
+            bOn = false;
+            var nowTop = $(document).scrollTop();
+            var disTop = $("input").val() - nowTop;
+            if(disTop<=5){
+                $(document).scrollTop($("input").val());
+                clearInterval(timer);
+            }else{
+                $(document).scrollTop(nowTop+disTop/6);
+            }
+        },30)
+    })
+    $(window).on("scroll",function (){
+        if(bOn){
+            clearInterval(timer);
+        }
+        console.log(bOn);
+        bOn = true;
+    })
+    </script>
+</body>
+</html>

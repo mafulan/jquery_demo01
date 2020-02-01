@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    // $("div").click(function (){
+    //     alert(123);
+    // }).mouseover(function (){
+    //     alert(123);
+    // })
+    // $("div").on("click mouseover",function (){
+    //     alert(123);
+    //     $("div").off("mouseover");
+    // })
+    $("div").on({
+        "click" : function (){
+            alert(123);
+        },
+        "mouseover" : function (){
+            alert(456);
+        }
+    })
+    </script>
+</body>
+</html>

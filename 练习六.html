@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽效果</title>
+    <style>
+        /* 自己写的 */
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.10.1.min.js"></script>
+     <script>
+        
+         $("div").mousedown(function(ev){
+            var disX = ev.pageX - $("div").offset().left;
+            var disY = ev.pageY - $("div").offset().top;
+            $(document).mousemove(function(ev){
+                var newL = ev.pageX - disX;
+                var newT = ev.pageY - disY;
+                $("div").css("left",newL+"px");
+               $("div").css("top",newT+"px");
+            })
+            $(document).on("mouseup",function(){
+            $(document).off("mousedown mousemove");
+        })
+        return false;
+        })
+       
+       
+     </script>
+
+</body>
+</html>

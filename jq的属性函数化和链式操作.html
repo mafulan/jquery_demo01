@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        font-size: 30px;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    $("div").html("我是div的新内容");
+    console.log($("div").html());
+    // $("div").html().css().click()
+    $("div").css("backgroundColor","blue").html("我是修改后的内容").click(function (){
+        $(this).css("backgroundColor","yellow");
+    })
+    </script>
+</body>
+</html>

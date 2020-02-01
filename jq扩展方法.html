@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>打开发个快递反<span>馈的</span>咖啡馆打开发个快递反馈的咖啡馆打<span>开发</span>个快递反馈的咖啡馆</p>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    $.extend({
+        addXZY (str){
+            return str+"-xzy";
+        },
+    })
+    var str = "我是一段小说";
+    // console.log($.addXZY(str));
+    $.fn.highLight = function (){
+        this.css({
+            "color" : "white",
+            "backgroundColor" : "gray",
+        })
+        return this;
+    }
+    $.fn.changeF = function (str){
+        this.css("fontFamily",str);
+        return this;
+    }
+    $("span").highLight().changeF("楷体");
+    // changeF
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    js转jq对象方法：js外面套一个$()，且每次只能转一个js
+    jq转js的方法：将集合的第n个对象提出来
+    （1）$().get(n)
+    <!-- $("#div").get[0] -->
+    （2）$()[n]
+    <!-- $("#div")[0] -->
+
+    1.取赋值合体
+    $("div").html("我是div内容 ");//赋值
+    console.log($("div").html());//取值
+
+    2.链式操作
+    $("div").html().css().click();//每个方法返回值：return this;
+    举例：
+    <!-- $("div").html(“123).css("font-size","14px").click(function(){
+        $(this).css("backgroundColor","red")
+    }); -->
+
+    3.筛选功能
+    <!-- $("li").css("backgroundColor","red").filter(".li1").html("我是筛选的li1"); -->
+
+
+    4.索引
+       索引是当前元素在所有兄弟节点(具有相同父元素)中的位置(一定要有共同的父元素)
+
+    5.eq(i)   筛选方法：筛选jq对象的第i个对象
+      <!-- $("h").eq(i)  等价于  $("h:eq(+i+)")  -->
+
+    6.没有方法的属性的取值赋值方法attr()
+
+    7.如果JQ对象是多个元素, 会自动遍历(赋相同的值)，取值时则只会取集合中的第一个元素的值
+
+    8.元素的尺寸(依然可以获得隐藏元素的尺寸大小)
+
+    9.元素的删除：
+       $('div').detach();   //跟remove方法一样，只不过会保留删除的这个元素的事件操作
+
+    10.包装
+       $("div").wrap($("<div>"))
+       $("div").wrapAll($("<div>")) 
+       $("div").wrapInner($("<span>"))
+
+    11.var aAll = $("div").add("span");//既有div又有span 
+</body>
+</html>

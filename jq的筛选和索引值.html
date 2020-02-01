@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    // for(var i=0;i<$("a").length;i++){
+    //     console.log($("a").eq(i).index()); 
+    // }
+    for(var i=0;i<$("li").length;i++){
+        // console.log($("li").eq(i).index()); 
+        console.log($("li:eq("+i+")").index()); 
+    }
+    </script>
+</body>
+</html>
